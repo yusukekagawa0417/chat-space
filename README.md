@@ -27,8 +27,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -63,8 +63,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -76,8 +76,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
+|image|references|null: false, foreign_key: true|
+|comment|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :comment
