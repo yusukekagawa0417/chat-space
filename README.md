@@ -27,7 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false, foreign_key: true, index: true|
+|user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
 ### Association
@@ -39,7 +39,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user|string|null: false, unique: true|
+|name|string|null: false, unique: true, index: true|
 |email|text|null: false|
 
 ### Association
@@ -62,7 +62,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
+|body|text|null: false|
+|image|string|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
@@ -70,14 +71,3 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 - has_many :images
-
-
-## imagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image|references|null: false, foreign_key: true|
-|comment|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :comment
