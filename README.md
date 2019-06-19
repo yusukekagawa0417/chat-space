@@ -27,7 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true, index: true|
 |group|references|null: false, foreign_key: true|
 
 ### Association
