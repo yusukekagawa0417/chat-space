@@ -51,7 +51,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users
