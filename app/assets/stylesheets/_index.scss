@@ -1,0 +1,28 @@
+$chat-side-color: #FFFFFF;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.fa {
+  color: white;
+}
+
+.flash-box {
+  background-color: #38AEF0;
+  text-align: center; 
+  color: white;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  @import "chat-side";
+  @import "chat-main";
+}
