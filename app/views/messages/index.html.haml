@@ -1,6 +1,3 @@
-.flash-box
-  グループを作成しました
-
 .wrapper
   .chat-side
     .side-header
@@ -13,7 +10,7 @@
               %i.fa.fa-edit
           %li.side-header__box__menu__edit-user
             = link_to edit_user_path(current_user) do
-              = fa_cog 'cog', class: 'icon'
+              %i.fa.fa-cog
     .groups
       = link_to "#" do
         .group
