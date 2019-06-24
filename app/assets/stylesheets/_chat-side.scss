@@ -27,16 +27,19 @@
     padding: 20px 20px 0 20px;
     background-color: #2f3e51;
     font-weight: bold;
-    .group  {
-      padding-bottom: 40px; 
-      &__group-name {
-        font-size: 15px;
-        padding-bottom: 5px;
-        color: $chat-side-color;
-      }
-      &__latest-message {
-        font-size: 11px;
-        color: $chat-side-color;
+    .EDITlink {
+      text-decoration: none;
+      .group  {
+        padding-bottom: 40px;       
+        &__group-name {
+          font-size: 15px;
+          padding-bottom: 5px;
+          color: $chat-side-color;
+        }
+        &__latest-message {
+          font-size: 11px;
+          color: $chat-side-color;
+        }
       }
     }
   }
