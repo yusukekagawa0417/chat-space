@@ -1,3 +1,50 @@
 .wrapper
-
-  = render 'messages/index'
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name
+          = current_user.name
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = link_to new_group_path do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            = link_to edit_user_path(current_user) do
+              %i.fa.fa-cog
+    .groups
+      .group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .group__group-name
+              = group.name
+            .group__latest-message
+              メッセージはまだありません。
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %p.main-header__left-box__current-group
+          test-group
+        %ul.main-header__left-box__member-list
+          Member : 
+          %li.main-header__left-box__member-list__member
+            test-member
+        = link_to "#" do
+          .main-header__edit-btn
+            Edit
+    .messages
+      .message
+        .message__upper-box
+          %p.message__upper-box__talker
+            test-talker
+          %p.message__upper-box__date
+            test-date
+        %p.message__text
+          test-text
+    .form
+      %form{action: "/", method: "post"}
+        .input-box
+          %input{class: "input-box__text",placeholder: "type a message", type: "text"}
+          %lavel.input-box__image
+            %i.fa.fa-image
+            %input{class: "input-box__image__file",type: "file"}
+        %input{class: "submit-btn", type:"submit", value:"Send"}
