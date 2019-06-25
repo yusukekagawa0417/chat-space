@@ -9,8 +9,10 @@
         %ul.main-header__left-box__member-list
           Member : 
           %li.main-header__left-box__member-list__member
+            -# - users.each do |user|
+            -#   = @group.user
             -# = @group.user
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         .main-header__edit-btn
           Edit
     .messages
