@@ -37,6 +37,7 @@
     padding: 46px 40px 0 ;
     background-color: #fafafa;
     height: calc(100vh - 246px);
+    overflow: scroll;
     .message  {
       padding-bottom: 40px;
       &__upper-box  {
