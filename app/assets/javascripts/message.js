@@ -1,23 +1,56 @@
 $(function(){
   function buildHTML(message){
-    var html = `.message
-                  .message__upper-box
-                    %p.message__upper-box__talker
-                      = ${message.user.name}
-                    %p.message__upper-box__date
-                      = ${message.created_at.strftime("%Y/%m/%d %H:%M")}
-                  .message__lower-box
-                    - if ${message.content}.present?
-                      %p.message__lower-box__text
-                        = ${message.content}
-                    = image_tag ${message.image.url}, class: 'lower-message__image' if ${message.image}.present?`
-    return html;
+    if(message.content !== null && message.image.url !== null){
+      var html = `<div class="message">
+                  <div class="message__upper-box">
+                    <p class="message__upper-box__talker">
+                      ${message.user.name}
+                    </p>
+                    <p class="message__upper-box__date">
+                      ${message.time}
+                    </p>
+                  </div>
+                  <div class="message__lower-box">
+                    <p class="message__lower-box__text">
+                      ${message.content}
+                    </p>                    
+                    <img src=${message.image.url}, class='lower-message__image'>
+                  </div>
+                </div>`
+      return html;
+    }
+    if(message.content !== null && message.image.url == null){
+      var html = `<div class="message">
+                    <div class="message__upper-box">
+                      <p class="message__upper-box__talker">
+                        ${message.user.name}
+                      </p>
+                      <p class="message__upper-box__date">
+                        ${message.time}
+                      </p>
+                    </div>
+                    <div class="message__lower-box">
+                      <p class="message__lower-box__text">
+                        ${message.content}
+                      </p>                    
+                    </div>
+                  </div>`
+      return html;
+    }
+    if(message.content == null && message.image.url !== null){
+      var html = `<div class="message">
+                    <div class="message__lower-box">                   
+                      <img src=${message.image.url}, class='lower-message__image'>
+                    </div>
+                  </div>`
+      return html;
+    }
   }
 
-  $('.new_message').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -28,10 +61,11 @@ $(function(){
     })
     .done(function(message){
       var html = buildHTML(message);
-      $('.messages').append(html)
-      $('.input-box__text').val('')
+      $('.messages').append(html);
+      $('.input-box__text').val('');
+      $('.submit-btn').prop('disabled', false);
     })
-    .fail(function{
+    .fail(function(){
       alert('error');
     })
   })
