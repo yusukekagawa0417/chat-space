@@ -5,7 +5,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    # binding.pry
   end
 
   def update
