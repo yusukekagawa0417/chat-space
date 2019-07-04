@@ -91,7 +91,6 @@ $(function(){
         if(message !== null){
           var html = buildHTML(message);
           $('.messages').append(html);
-          console.log('success');
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         };
       });
