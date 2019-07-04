@@ -97,7 +97,7 @@ $(function(){
       });
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
   if(window.location.href.match("messages")){
