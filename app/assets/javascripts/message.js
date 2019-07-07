@@ -71,6 +71,7 @@ $(function(){
       var html = buildHTML(message);
       $('.messages').append(html);
       $('.input-box__text').val('');
+      $('.input-box__image__file').val('');
       $('.submit-btn').prop('disabled', false);
     })
     .fail(function(){
@@ -84,7 +85,7 @@ $(function(){
       url: "api/messages",
       type: 'get',
       dataType: 'json',
-      data: {id: last_message_id}
+      data: {last_message_id: last_message_id}
     })
     .done(function(messages){
       messages.forEach(function(message){

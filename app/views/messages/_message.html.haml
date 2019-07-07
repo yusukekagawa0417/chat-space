@@ -7,5 +7,5 @@
   .message__lower-box
     - if message.content.present?
       %p.message__lower-box__text
-        = message.content
+        = message.content 
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
