@@ -73,6 +73,7 @@ $(function(){
       $('.input-box__text').val('');
       $('.input-box__image__file').val('');
       $('.submit-btn').prop('disabled', false);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert('error');
