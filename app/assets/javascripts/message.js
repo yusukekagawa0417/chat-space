@@ -88,6 +88,7 @@ $(function(){
       dataType: 'json',
       data: {last_message_id: last_message_id}
     })
+
     .done(function(messages){
       messages.forEach(function(message){
         if(message !== null){
@@ -101,6 +102,7 @@ $(function(){
       alert('error');
     });
   };
+  
   if(window.location.href.match("messages")){
     setInterval(reloadMessages, 5000);
   };
